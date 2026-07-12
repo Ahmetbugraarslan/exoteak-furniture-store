@@ -13,6 +13,7 @@ const slides = [
     sub: "Suar, teak ve recycle ahşaptan üretilen, her biri dünyada tek parçalar.",
     cta: "Koleksiyonu İncele",
     ctaLink: "/urunler",
+    img: "/images/slider/1.jpg",
     bg: "linear-gradient(125deg,#3a2215 0%,#6a3d1a 40%,#8B5A2B 100%)",
   },
   {
@@ -21,6 +22,7 @@ const slides = [
     sub: "Her parça; doğadan ilham alan mimarlar ve usta el işçileri tarafından hayata geçirilir.",
     cta: "Ürünleri Keşfet",
     ctaLink: "/urunler",
+    img: "/images/slider/2.jpg",
     bg: "linear-gradient(125deg,#2d3820 0%,#4a5a32 40%,#6B7553 100%)",
   },
   {
@@ -29,6 +31,7 @@ const slides = [
     sub: "Asırlık ahşabın doğal güzelliğini modern bir tasarım anlayışıyla birleştiriyoruz.",
     cta: "Hikayemizi Oku",
     ctaLink: "/hakkimizda",
+    img: "/images/slider/3.jpg",
     bg: "linear-gradient(125deg,#1a1208 0%,#4a3018 40%,#C8A86B 100%)",
   },
 ];
@@ -121,7 +124,7 @@ function HeroSlider() {
         <div key={i} className={`hero-slide${i === current ? " active" : ""}`}>
           <div
             className="hero-slide__bg"
-            style={{ background: s.bg }}
+            style={{ backgroundImage: `url(${s.img}), ${s.bg}` }}
           />
           <div className="hero-slide__overlay" />
           <div className="container hero-slide__content">
