@@ -967,7 +967,7 @@ h1, h2, h3, h4 {
 .fp-section .fp-anim {
   opacity: 0;
   transform: translateY(36px);
-  transition: none;
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
 }
 .fp-section.fp-active .fp-anim {
   opacity: 1;
@@ -983,7 +983,7 @@ h1, h2, h3, h4 {
 /* Zoom-out effect for bg elements */
 .fp-section .fp-zoom {
   transform: scale(1.07);
-  transition: none;
+  transition: transform 0.5s var(--ease);
 }
 .fp-section.fp-active .fp-zoom {
   transform: scale(1);
@@ -992,7 +992,8 @@ h1, h2, h3, h4 {
 
 /* Slide from left */
 .fp-section .fp-from-left {
-  opacity: 0; transform: translateX(-60px); transition: none;
+  opacity: 0; transform: translateX(-60px);
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
 }
 .fp-section.fp-active .fp-from-left {
   opacity: 1; transform: none;
