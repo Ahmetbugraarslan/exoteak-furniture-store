@@ -257,7 +257,7 @@ h1, h2, h3, h4 {
 }
 .hero-slide.active .hero-slide__eyebrow { opacity: 1; transform: none; }
 .hero-slide__title {
-  font-family: var(--serif); font-size: clamp(2.8rem, 6vw, 5.2rem);
+  font-family: var(--serif); font-size: clamp(2rem, 3.2vw + 2.4vh, 5.2rem);
   font-weight: 500; line-height: 1.08; color: #fff; margin-bottom: 1.4rem;
   opacity: 0; transform: translateY(24px);
   transition: opacity 0.8s 0.5s var(--ease), transform 0.8s 0.5s var(--ease);
