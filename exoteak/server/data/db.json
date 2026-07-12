@@ -119,34 +119,6 @@
       "featured": false,
       "description": "Hava koşullarına dayanıklı tik ağacından, bahçe ve teras için doğal kütük masa. Zamanla zarif bir gri patina kazanır.",
       "createdAt": "2024-12-28T09:00:00.000Z"
-    },
-    {
-      "id": "p_P1pe-k_R",
-      "slug": "yunus",
-      "name": "yunus",
-      "category": "",
-      "collection": "",
-      "material": "",
-      "price": 0,
-      "dimensions": "",
-      "image": "/uploads/1783701009885-9dDDgp.jpeg",
-      "featured": false,
-      "description": "",
-      "createdAt": "2026-07-10T16:30:13.341Z"
-    },
-    {
-      "id": "p_pPxwwt_0",
-      "slug": "yunus2",
-      "name": "yunus2",
-      "category": "",
-      "collection": "",
-      "material": "",
-      "price": 0,
-      "dimensions": "",
-      "image": "/uploads/1783701064131-b5CqHW.jpeg",
-      "featured": false,
-      "description": "",
-      "createdAt": "2026-07-10T16:31:11.692Z"
     }
   ],
   "categories": [
