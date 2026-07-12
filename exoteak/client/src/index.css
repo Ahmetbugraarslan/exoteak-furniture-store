@@ -372,7 +372,7 @@ h1, h2, h3, h4 {
 .cat-card:hover .cat-card__arrow { opacity: 1; transform: none; }
 
 /* category placeholder bg */
-.cat-card--masa     .cat-card__bg { background: linear-gradient(135deg, #8B5A2B 0%, #5a3720 100%); }
+.cat-card--masa     .cat-card__bg { background-image: url(/images/categories/masalar.jpg), linear-gradient(135deg, #8B5A2B 0%, #5a3720 100%); }
 .cat-card--sandalye .cat-card__bg { background: linear-gradient(135deg, #6B7553 0%, #4a5238 100%); }
 .cat-card--konsol   .cat-card__bg { background: linear-gradient(135deg, #7a6048 0%, #4a3828 100%); }
 .cat-card--koltuk   .cat-card__bg { background: linear-gradient(135deg, #C8A86B 0%, #8B6030 100%); }
