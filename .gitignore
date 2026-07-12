@@ -1,0 +1,19 @@
+# Claude Code local config
+.claude/
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment variables
+.env
+
+# Uploaded files (kept in repo via .gitkeep)
+server/uploads/*
+!server/uploads/.gitkeep
+
+# OS / editor junk
+.DS_Store
+*.log

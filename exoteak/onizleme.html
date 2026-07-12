@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>EXOTEAK — Tasarım Önizleme</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Hanken+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --paper:#fbf8f2;--bg:#f3ede2;--bg-warm:#ece3d4;--ink:#241c15;--ink-soft:#4a3e32;
+  --wood:#6b4a2f;--brass:#ad8a4c;--brass-soft:#c9a86a;--line:#ddd1bd;--espresso:#1c1611;
+  --serif:"Fraunces",Georgia,serif;--sans:"Hanken Grotesk",system-ui,sans-serif;--ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-weight:350;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(circle at 15% 10%,rgba(173,138,76,.05),transparent 40%),radial-gradient(circle at 85% 90%,rgba(107,74,47,.05),transparent 45%);}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacing:-.01em}
+.container{max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+.eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--brass);font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:.6em;padding:.95em 1.8em;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;border:1px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer;border-radius:2px;transition:all .4s var(--ease)}
+.btn:hover{background:transparent;color:var(--ink)}
+.btn--ghost{background:transparent;color:var(--ink)}.btn--ghost:hover{background:var(--ink);color:var(--paper)}
+.nav{position:sticky;top:0;z-index:50;background:rgba(251,248,242,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+.nav__logo{font-family:var(--serif);font-size:1.6rem;letter-spacing:.18em;font-weight:500}
+.nav__logo span{color:var(--brass)}
+.nav__links{display:flex;gap:2.2rem}
+.nav__links a{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+.hero{padding:clamp(60px,11vw,150px) 0 clamp(50px,8vw,110px)}
+.hero__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,80px);align-items:center}
+.hero h1{font-size:clamp(2.8rem,7vw,5.6rem)}.hero h1 em{font-style:italic;color:var(--wood)}
+.hero__lead{margin:1.8rem 0 2.4rem;font-size:1.12rem;max-width:38ch;color:var(--ink-soft)}
+.hero__art{aspect-ratio:4/5;border-radius:2px;position:relative;overflow:hidden;background:linear-gradient(150deg,#8a6038,#5a3d24 55%,#3a2719);box-shadow:0 40px 80px -30px rgba(40,26,14,.6)}
+.hero__art::after{content:"EXOTEAK";position:absolute;inset:0;display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,3vw,2.4rem);color:rgba(251,248,242,.25);letter-spacing:.3em}
+.hero__art::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(85deg,rgba(0,0,0,.12) 0 2px,transparent 2px 14px);mix-blend-mode:overlay}
+.hero__stats{display:flex;gap:2.5rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--line)}
+.hero__stat b{font-family:var(--serif);font-size:2rem;display:block;line-height:1}
+.hero__stat span{font-size:.78rem;letter-spacing:.08em;color:var(--ink-soft);text-transform:uppercase}
+.section{padding:clamp(60px,9vw,120px) 0}
+.section__head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:3rem;flex-wrap:wrap}
+.section__head h2{font-size:clamp(2rem,4.5vw,3.4rem)}
+.section--dark{background:var(--espresso);color:var(--paper)}.section--dark .eyebrow{color:var(--brass-soft)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:clamp(20px,3vw,40px)}
+.card{display:block;transition:transform .4s var(--ease)}.card:hover{transform:translateY(-6px)}
+.card__media{aspect-ratio:4/5;border-radius:2px;overflow:hidden;position:relative;background:linear-gradient(155deg,var(--bg-warm),#d8c9af)}
+.card__placeholder{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-family:var(--serif);font-style:italic;color:var(--wood);padding:1rem;background-image:repeating-linear-gradient(100deg,rgba(107,74,47,.07) 0 3px,transparent 3px 18px)}
+.card__tag{position:absolute;top:12px;left:12px;background:var(--paper);color:var(--wood);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:5px 10px;border-radius:100px}
+.card__body{padding-top:1rem}.card__name{font-family:var(--serif);font-size:1.25rem}
+.card__meta{font-size:.82rem;color:var(--ink-soft);margin-top:2px}.card__price{margin-top:.5rem;font-weight:600}
+.quote{font-family:var(--serif);font-style:italic;font-size:clamp(1.5rem,3.5vw,2.6rem);line-height:1.3;max-width:24ch}
+.quote__author{font-family:var(--sans);font-style:normal;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;margin-top:1.5rem;color:var(--brass-soft)}
+.footer{background:var(--espresso);color:var(--paper);padding:clamp(50px,7vw,90px) 0 40px}
+.footer__logo{font-family:var(--serif);font-size:2rem;letter-spacing:.16em}
+.note{background:var(--brass);color:#1c1611;text-align:center;padding:.7rem;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+@media(max-width:900px){.hero__grid{grid-template-columns:1fr}.story{grid-template-columns:1fr!important}.nav__links{display:none}}
+</style>
+</head>
+<body>
+<div class="note">Statik tasarım önizlemesi — gerçek sitede ürünler admin panelinden yönetilir</div>
+<nav class="nav"><div class="container nav__inner">
+  <div class="nav__logo">EXO<span>TEAK</span></div>
+  <div class="nav__links"><a>Anasayfa</a><a>Ürünler</a><a>Hakkımızda</a><a>İletişim</a></div>
+</div></nav>
+
+<header class="hero"><div class="container hero__grid">
+  <div>
+    <span class="eyebrow">Asırlık Ahşaba Saygı</span>
+    <h1 style="margin-top:1.2rem">Her bir parça <em>dünyada tek.</em></h1>
+    <p class="hero__lead">Fırınlarda yakılmaktan kurtardığımız asırlık ahşap, suar ve teak; ustalarımızın elinde yeniden hayat buluyor. Yaşanmışlığın zarafetini evinize taşıyın.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap"><a class="btn">Koleksiyonu Keşfet</a><a class="btn btn--ghost">Hikâyemiz</a></div>
+    <div class="hero__stats"><div class="hero__stat"><b>4.8</b><span>Google Puanı</span></div><div class="hero__stat"><b>20+</b><span>Yıllık Ustalık</span></div><div class="hero__stat"><b>%100</b><span>Doğal Ahşap</span></div></div>
+  </div>
+  <div class="hero__art"></div>
+</div></header>
+
+<section class="section"><div class="container">
+  <div class="section__head"><div><span class="eyebrow">Seçkiler</span><h2 style="margin-top:.8rem">Öne Çıkan Parçalar</h2></div><a class="btn btn--ghost">Tümünü Gör</a></div>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<section class="section section--dark"><div class="container story" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center">
+  <div><span class="eyebrow">Felsefemiz</span><p class="quote" style="margin-top:1.5rem">“Her şey o sihirli kelimeyle başladı: saygı.”</p><p class="quote__author">— Exoteak</p></div>
+  <div style="color:rgba(251,248,242,.78);line-height:1.8">
+    <p>Yıllar önce yurt dışında recycle ürünlerle tanıştığımızda, yıpranmışlıklarına rağmen o keskin duruşa âşık olduk. Anadolu'da ise saygı duyduğumuz asırlık ahşapların fırınlarda yakıldığını gördük.</p>
+    <p style="margin-top:1.2rem">Onları kurtardık. Mimarlarımızın tasarım kararlarıyla bu ahşaplar yeniden vücut buldu. Çünkü yaşanmışlıklar da saygıyı hak ediyordu.</p>
+  </div>
+</div></section>
+
+<footer class="footer"><div class="container">
+  <div class="footer__logo">EXOTEAK</div>
+  <p style="color:rgba(251,248,242,.6);margin-top:1rem;max-width:32ch">Asırlık ahşaba saygı. Her biri dünyada tek, el yapımı doğal ahşap mobilyalar.</p>
+  <p style="color:rgba(251,248,242,.4);margin-top:2rem;font-size:.8rem">© 2025 Exoteak · Masko Mobilya Kenti, Başakşehir / İstanbul</p>
+</div></footer>
+
+<script>
+const products=[
+  {name:"Galata Suar Yemek Masası",col:"Galata Konsept",mat:"Suar (Yağmur Ağacı)",price:184600},
+  {name:"Recycle Asırlık Konsol",col:"Recycle",mat:"Geri Kazanılmış Ahşap",price:96200},
+  {name:"Epoksi River Toplantı Masası",col:"Özgün Tasarım",mat:"Ceviz + Epoksi",price:278200},
+  {name:"Siyah İnci TV Ünitesi",col:"Siyah İnci",mat:"Yanık Ahşap",price:71800},
+];
+const fmt=n=>new Intl.NumberFormat("tr-TR",{style:"currency",currency:"TRY",maximumFractionDigits:0}).format(n);
+document.getElementById("grid").innerHTML=products.map(p=>`
+  <a class="card"><div class="card__media"><span class="card__tag">${p.col}</span><div class="card__placeholder">${p.name}</div></div>
+  <div class="card__body"><div class="card__name">${p.name}</div><div class="card__meta">${p.mat}</div><div class="card__price">${fmt(p.price)}</div></div></a>`).join("");
+</script>
+</body>
+</html>

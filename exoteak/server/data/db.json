@@ -1,0 +1,194 @@
+{
+  "users": [
+    {
+      "id": "ulbdABG2TFzTlIG0Q_uZS",
+      "email": "admin@exoteak.com.tr",
+      "password": "$2a$10$j1yAfMS39mkfMSbn./4q9Ooe47AEtB4j6BUKzyUrInN2kXkKs.p6m",
+      "role": "admin"
+    }
+  ],
+  "products": [
+    {
+      "id": "p_galata_masa",
+      "slug": "galata-suar-yemek-masasi",
+      "name": "Galata Suar Yemek Masası",
+      "category": "masalar",
+      "collection": "Galata Konsept",
+      "material": "Suar (Yağmur Ağacı)",
+      "price": 98500,
+      "dimensions": "240 x 100 x 76 cm",
+      "image": "",
+      "featured": true,
+      "description": "Tek parça suar kütüğünden, doğal kenar (live edge) formuyla işlenmiş yemek masası. Her doku ağacın kendi hikâyesini taşır; dünyada birebir eşi yoktur.",
+      "createdAt": "2025-01-10T09:00:00.000Z"
+    },
+    {
+      "id": "p_recycle_konsol",
+      "slug": "recycle-asirlik-konsol",
+      "name": "Recycle Asırlık Konsol",
+      "category": "konsollar",
+      "collection": "Recycle",
+      "material": "Geri Kazanılmış Asırlık Ahşap",
+      "price": 96200,
+      "dimensions": "160 x 45 x 85 cm",
+      "image": "",
+      "featured": true,
+      "description": "Eski Anadolu evlerinden kurtarılan, fırınlarda yakılmaktan kurtarılmış asırlık ahşaptan üretilmiştir. Yıpranmışlığın zarafetini taşıyan bir saygı duruşu.",
+      "createdAt": "2025-01-08T09:00:00.000Z"
+    },
+    {
+      "id": "p_epoksi_masa",
+      "slug": "epoksi-river-masa",
+      "name": "Epoksi River Toplantı Masası",
+      "category": "epoksi",
+      "collection": "Özgün Tasarım",
+      "material": "Ceviz + Epoksi Reçine",
+      "price": 278200,
+      "dimensions": "300 x 110 x 75 cm",
+      "image": "",
+      "featured": true,
+      "description": "Ceviz kütüğün doğal kenarları arasından akan şeffaf epoksi nehir. Aydınlatma altında derinlik kazanan, ofis ve yemek alanları için ikonik bir parça.",
+      "createdAt": "2025-01-05T09:00:00.000Z"
+    },
+    {
+      "id": "p_hera_sehpa",
+      "slug": "hera-orta-sehpa",
+      "name": "Hera Orta Sehpa",
+      "category": "orta-sehpalar",
+      "collection": "Hera Konsept",
+      "material": "Suar",
+      "price": 45500,
+      "dimensions": "110 x 70 x 40 cm",
+      "image": "",
+      "featured": false,
+      "description": "Oturma gruplarının merkezine doğallık taşıyan, kalın suar dilimden orta sehpa. Pirinç detaylı ayak seçenekleriyle.",
+      "createdAt": "2025-01-04T09:00:00.000Z"
+    },
+    {
+      "id": "p_edinburg_sandalye",
+      "slug": "edinburg-sandalye",
+      "name": "Edinburg Sandalye",
+      "category": "sandalyeler",
+      "collection": "Edinburg Konsept",
+      "material": "Masif Ahşap + Deri",
+      "price": 18900,
+      "dimensions": "48 x 52 x 92 cm",
+      "image": "",
+      "featured": false,
+      "description": "Masif ahşap iskelet üzerine el dikişli deri oturma yüzeyi. Galata ve Hera masalarıyla mükemmel uyum.",
+      "createdAt": "2025-01-03T09:00:00.000Z"
+    },
+    {
+      "id": "p_siyah_inci_tv",
+      "slug": "siyah-inci-tv-unitesi",
+      "name": "Siyah İnci TV Ünitesi",
+      "category": "tv-uniteleri",
+      "collection": "Siyah İnci Konsept",
+      "material": "Yanık Ahşap (Shou Sugi Ban)",
+      "price": 71800,
+      "dimensions": "200 x 45 x 50 cm",
+      "image": "",
+      "featured": true,
+      "description": "Japon shou sugi ban tekniğiyle yüzeyi yakılarak korunan, derin siyah dokulu TV ünitesi. Modern salonların karakter parçası.",
+      "createdAt": "2025-01-02T09:00:00.000Z"
+    },
+    {
+      "id": "p_star_bar",
+      "slug": "star-bar-unitesi",
+      "name": "Star Bar Ünitesi",
+      "category": "bar-uniteleri",
+      "collection": "Star Konsept",
+      "material": "Recycle Ahşap",
+      "price": 149500,
+      "dimensions": "180 x 60 x 110 cm",
+      "image": "",
+      "featured": false,
+      "description": "Geri kazanılmış ahşaptan, şişe ve bardak bölmeli bar ünitesi. Ev ve mekânlar için sıcak bir buluşma noktası.",
+      "createdAt": "2025-01-01T09:00:00.000Z"
+    },
+    {
+      "id": "p_kutuk_dis_mekan",
+      "slug": "kutuk-dis-mekan-masa",
+      "name": "Kütük Dış Mekan Masa",
+      "category": "dis-mekan",
+      "collection": "Özgün Tasarım",
+      "material": "Teak (Tik)",
+      "price": 54600,
+      "dimensions": "90 x 90 x 75 cm",
+      "image": "",
+      "featured": false,
+      "description": "Hava koşullarına dayanıklı tik ağacından, bahçe ve teras için doğal kütük masa. Zamanla zarif bir gri patina kazanır.",
+      "createdAt": "2024-12-28T09:00:00.000Z"
+    },
+    {
+      "id": "p_P1pe-k_R",
+      "slug": "yunus",
+      "name": "yunus",
+      "category": "",
+      "collection": "",
+      "material": "",
+      "price": 0,
+      "dimensions": "",
+      "image": "/uploads/1783701009885-9dDDgp.jpeg",
+      "featured": false,
+      "description": "",
+      "createdAt": "2026-07-10T16:30:13.341Z"
+    },
+    {
+      "id": "p_pPxwwt_0",
+      "slug": "yunus2",
+      "name": "yunus2",
+      "category": "",
+      "collection": "",
+      "material": "",
+      "price": 0,
+      "dimensions": "",
+      "image": "/uploads/1783701064131-b5CqHW.jpeg",
+      "featured": false,
+      "description": "",
+      "createdAt": "2026-07-10T16:31:11.692Z"
+    }
+  ],
+  "categories": [
+    {
+      "slug": "masalar",
+      "name": "Masalar"
+    },
+    {
+      "slug": "sandalyeler",
+      "name": "Sandalyeler"
+    },
+    {
+      "slug": "konsollar",
+      "name": "Konsollar"
+    },
+    {
+      "slug": "tv-uniteleri",
+      "name": "TV Üniteleri"
+    },
+    {
+      "slug": "orta-sehpalar",
+      "name": "Orta Sehpalar"
+    },
+    {
+      "slug": "bar-uniteleri",
+      "name": "Bar Üniteleri"
+    },
+    {
+      "slug": "recycle",
+      "name": "Recycle"
+    },
+    {
+      "slug": "epoksi",
+      "name": "Epoksi"
+    },
+    {
+      "slug": "dis-mekan",
+      "name": "Dış Mekan"
+    },
+    {
+      "slug": "aksesuarlar",
+      "name": "Aksesuarlar"
+    }
+  ]
+}
