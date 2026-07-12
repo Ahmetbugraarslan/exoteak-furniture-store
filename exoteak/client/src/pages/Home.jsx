@@ -107,15 +107,27 @@ function HeroSlider() {
   const next = useCallback(() => setCurrent(c => (c + 1) % slides.length), []);
   const back = useCallback(() => setCurrent(c => (c - 1 + slides.length) % slides.length), []);
 
-  useEffect(() => {
+  const restartTimer = useCallback(() => {
+    clearInterval(timerRef.current);
     timerRef.current = setInterval(next, 6000);
-    return () => clearInterval(timerRef.current);
   }, [next]);
 
+  useEffect(() => {
+    restartTimer();
+    return () => clearInterval(timerRef.current);
+  }, [restartTimer]);
+
   const handleDot = (i) => {
-    clearInterval(timerRef.current);
     setCurrent(i);
-    timerRef.current = setInterval(next, 6000);
+    restartTimer();
+  };
+  const handleNext = () => {
+    next();
+    restartTimer();
+  };
+  const handleBack = () => {
+    back();
+    restartTimer();
   };
 
   return (
@@ -139,13 +151,13 @@ function HeroSlider() {
         </div>
       ))}
       <div className="hero-controls">
-        <button className="hero-arrow" onClick={back} aria-label="Önceki">&#8592;</button>
+        <button className="hero-arrow" onClick={handleBack} aria-label="Önceki">&#8592;</button>
         <div className="hero-dots">
           {slides.map((_, i) => (
             <button key={i} className={`hero-dot${i === current ? " active" : ""}`} onClick={() => handleDot(i)} aria-label={`Slayt ${i+1}`} />
           ))}
         </div>
-        <button className="hero-arrow" onClick={next} aria-label="Sonraki">&#8594;</button>
+        <button className="hero-arrow" onClick={handleNext} aria-label="Sonraki">&#8594;</button>
       </div>
     </div>
   );
