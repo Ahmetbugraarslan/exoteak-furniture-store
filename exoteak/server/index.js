@@ -45,7 +45,7 @@ async function seedAdmin() {
   const db = await readDB();
   if (db.users.length === 0) {
     const email = process.env.ADMIN_EMAIL || "admin@exoteak.com.tr";
-    const password = process.env.ADMIN_PASSWORD || "Exoteak2025!";
+    const password = process.env.ADMIN_PASSWORD || nanoid(16);
     const hash = await bcrypt.hash(password, 10);
     db.users.push({ id: nanoid(), email, password: hash, role: "admin" });
     await writeDB(db);
