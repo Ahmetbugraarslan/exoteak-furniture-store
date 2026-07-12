@@ -1038,11 +1038,14 @@ h1, h2, h3, h4 {
 /* Section header row (title left, cta right) */
 .fp-header {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-end;
   justify-content: space-between;
+  gap: 12px;
   margin-bottom: clamp(16px,2.5vh,28px);
   flex-shrink: 0;
 }
+.fp-header > a.btn { flex-shrink: 0; }
 .fp-title {
   font-size: clamp(1.8rem, 3.5vw, 3rem);
   margin-top: 0.5rem;
