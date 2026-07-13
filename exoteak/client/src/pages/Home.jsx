@@ -91,12 +91,31 @@ const whyItems = [
 ];
 
 const refProjects = [
-  { cls: "ref-card--1", name: "Villa Bosphorus",  loc: "Bebek, İstanbul",     products: "Yemek Masası, Sandalyeler" },
-  { cls: "ref-card--2", name: "Riva Residence",   loc: "Riva, İstanbul",      products: "Oturma Grubu, TV Ünitesi"  },
-  { cls: "ref-card--3", name: "Sky Lounge Hotel", loc: "Nişantaşı, İstanbul", products: "Bar Tezgahı, Tabureler"    },
-  { cls: "ref-card--4", name: "Bahçe Evi",        loc: "Sapanca",             products: "Bahçe Takımı, Pergola"     },
-  { cls: "ref-card--5", name: "Modern Loft",      loc: "Karaköy, İstanbul",   products: "Çalışma Masası, Raflar"    },
-  { cls: "ref-card--6", name: "Deniz Koyu",       loc: "Bodrum",              products: "Tekne Mobilyaları"         },
+  {
+    cls: "ref-card--1",
+    image: "/images/references/fatih-terim-villa.webp",
+    name: "Fatih Terim – Özel Villa",
+    loc: "İstanbul",
+    products: "Satılan ürün: Tek parça doğal kenarlı suar yemek masası. Teslim sonrası Exoteak ekibimiz tarafından periyodik bakım ve zımpara hizmeti verilmektedir.",
+    sold: true,
+  },
+  {
+    cls: "ref-card--2",
+    image: "/images/references/urla-konut-projesi.webp",
+    name: "Urla Konut Projesi",
+    loc: "Urla, İzmir",
+    products: "Yuvarlak masif yemek masası, dörtlü sandalye takımı ve doğal ahşap avize",
+  },
+  {
+    cls: "ref-card--3",
+    image: "/images/references/masko-showroom.webp",
+    name: "Masko Showroom",
+    loc: "Başakşehir, İstanbul",
+    products: "Showroom iç mekân düzenlemesi ve sergilenen koleksiyon parçaları",
+  },
+  { cls: "ref-card--4", name: "Bahçe Evi", loc: "Sapanca", products: "Bahçe takımı, pergola" },
+  { cls: "ref-card--5", name: "Modern Loft", loc: "Karaköy, İstanbul", products: "Çalışma masası, raflar" },
+  { cls: "ref-card--6", name: "Deniz Koyu", loc: "Bodrum", products: "Tekne mobilyaları" },
 ];
 
 /* ---- Hero Slider ---- */
@@ -145,7 +164,7 @@ function HeroSlider() {
             <p className="hero-slide__sub">{s.sub}</p>
             <div className="hero-slide__cta">
               <Link to={s.ctaLink} className="btn btn--gold">{s.cta}</Link>
-              <Link to="/iletisim" className="btn btn--light" style={{ marginLeft: "1rem" }}>Teklif Al</Link>
+              <Link to="/iletisim" className="btn btn--light">Teklif Al</Link>
             </div>
           </div>
         </div>
@@ -200,11 +219,11 @@ function SecCategories({ categories }) {
 }
 
 /* ---- Section 3: Featured Products ---- */
-function SecProducts({ featured }) {
+function SecProducts({ products = [] }) {
   return (
     <div className="fp-scene fp-scene--light">
-      <div className="fp-scene__inner">
-        <div className="fp-header">
+      <div className="fp-scene__inner fp-scene__inner--centered fp-scene__inner--products">
+        <div className="fp-header fp-header--center">
           <div className="fp-anim fp-anim-d1">
             <span className="eyebrow">Seçkiler</span>
             <h2 className="fp-title">Öne Çıkan Parçalar</h2>
@@ -212,11 +231,11 @@ function SecProducts({ featured }) {
           <Link to="/urunler" className="btn btn--ghost fp-anim fp-anim-d2">Tümünü Gör</Link>
         </div>
         <div className="fp-products-grid">
-          {featured.length === 0 ? (
+          {products.length === 0 ? (
             <p className="muted">Yükleniyor...</p>
           ) : (
-            featured.slice(0, 4).map((p, i) => (
-              <div key={p.id} className={`fp-anim fp-anim-d${i + 2}`}>
+            products.slice(0, 8).map((p, i) => (
+              <div key={p.id} className={`fp-anim fp-anim-d${(i % 4) + 2}`}>
                 <ProductCard product={p} />
               </div>
             ))
@@ -287,9 +306,20 @@ function SecReferences() {
         </div>
         <div className="fp-ref-grid">
           {refProjects.map((r, i) => (
-            <div key={i} className={`ref-card ${r.cls} fp-anim fp-anim-d${(i % 3) + 2}`}>
-              <div className="ref-card__bg" />
+            <div
+              key={i}
+              className={`ref-card ${r.cls}${r.image ? " ref-card--photo" : ""}${r.sold ? " ref-card--sold" : ""} fp-anim fp-anim-d${(i % 3) + 2}`}
+            >
+              <div
+                className="ref-card__bg"
+                style={r.image ? {
+                  backgroundImage: `url(${r.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                } : undefined}
+              />
               <div className="ref-card__overlay" />
+              {r.sold && <span className="ref-card__badge">Satıldı</span>}
               <div className="ref-card__info">
                 <div className="ref-card__project">{r.name}</div>
                 <div className="ref-card__loc">{r.loc}</div>
@@ -308,7 +338,7 @@ function SecContact() {
   return (
     <div className="fp-scene fp-scene--dark">
       <div className="fp-contact-inner">
-        <div style={{ textAlign: "center", maxWidth: 700, margin: "0 auto" }}>
+        <div style={{ textAlign: "center", maxWidth: 700, margin: "100px auto" }}>
           <span className="eyebrow fp-anim fp-anim-d1">Bize Ulaşın</span>
           <h2 className="fp-title fp-anim fp-anim-d2" style={{ color: "#fff", fontSize: "clamp(2.2rem,4.5vw,4rem)", margin: "1rem 0 1.5rem" }}>
             Hayalinizdeki Mobilyayı<br />Birlikte Tasarlayalım
@@ -342,7 +372,12 @@ export default function Home() {
   const categories = useCategoriesWithCounts();
 
   useEffect(() => {
-    api.getProducts({ featured: "true" }).then(setFeatured).catch(() => {});
+    api.getProducts()
+      .then((items) => {
+        const sorted = [...items].sort((a, b) => Number(b.featured) - Number(a.featured));
+        setFeatured(sorted);
+      })
+      .catch(() => {});
   }, []);
 
   return (
@@ -355,7 +390,7 @@ export default function Home() {
       <FullPageScroll>
         <HeroSlider />
         <SecCategories categories={categories} />
-        <SecProducts featured={featured} />
+        <SecProducts products={featured} />
         <SecWhy />
         <SecStory />
         <SecReferences />

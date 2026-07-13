@@ -10,13 +10,37 @@ export default function Navbar() {
   const [mobileUrunler, setMobileUrunler] = useState(false);
 
   useEffect(() => {
+    const syncNavH = () => {
+      const narrow = window.matchMedia("(max-width: 640px)").matches;
+      const h = narrow ? (scrolled ? 56 : 64) : (scrolled ? 68 : 80);
+      document.documentElement.style.setProperty("--nav-h", `${h}px`);
+    };
+    syncNavH();
+    window.addEventListener("resize", syncNavH);
+    return () => window.removeEventListener("resize", syncNavH);
+  }, [scrolled]);
+
+  useEffect(() => {
     setScrolled(window.scrollY > 40);
+    setMobileOpen(false);
+    setMobileUrunler(false);
   }, [pathname]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth > 1100) {
+        setMobileOpen(false);
+        setMobileUrunler(false);
+      }
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
   }, []);
 
   useEffect(() => {
@@ -76,7 +100,7 @@ export default function Navbar() {
               type="button"
               className={`nav__toggle${mobileOpen ? " open" : ""}`}
               onClick={() => setMobileOpen((o) => !o)}
-              aria-label="Menü"
+              aria-label={mobileOpen ? "Menüyü kapat" : "Menüyü aç"}
               aria-expanded={mobileOpen}
             >
               <span /><span /><span />
@@ -85,10 +109,27 @@ export default function Navbar() {
         </div>
       </nav>
 
-      <div className={`nav__mobile${mobileOpen ? " open" : ""}`}>
+      {mobileOpen && (
+        <button
+          type="button"
+          className="nav__backdrop"
+          onClick={close}
+          aria-label="Menüyü kapat"
+        />
+      )}
+
+      <div className={`nav__mobile${mobileOpen ? " open" : ""}`} aria-hidden={!mobileOpen}>
         <Link to="/" onClick={close}>Anasayfa</Link>
-        <button type="button" onClick={() => setMobileUrunler((o) => !o)}>
-          Ürünler {mobileUrunler ? "▲" : "▼"}
+        <button
+          type="button"
+          className={`nav__mobile-expand${mobileUrunler ? " open" : ""}`}
+          onClick={() => setMobileUrunler((o) => !o)}
+          aria-expanded={mobileUrunler}
+        >
+          <span>Ürünler</span>
+          <svg className="nav__mobile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" />
+          </svg>
         </button>
         {mobileUrunler && (
           <div className="nav__mobile-sub">

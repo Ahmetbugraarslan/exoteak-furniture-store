@@ -20,7 +20,7 @@ export default function FullPageScroll({ children }) {
   // Mobile detection
   useEffect(() => {
     const check = () => {
-      const m = window.innerWidth <= 900;
+      const m = window.innerWidth <= 1100;
       setIsMobile(m);
       mobileRef.current = m;
     };

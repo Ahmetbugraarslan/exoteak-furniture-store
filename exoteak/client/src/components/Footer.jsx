@@ -24,7 +24,7 @@ export default function Footer() {
               <a href="https://www.youtube.com/@exoteak3739" target="_blank" rel="noreferrer" className="footer__social" aria-label="YouTube">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M23 12s0-3.8-.5-5.6a3.3 3.3 0 00-2.3-2.3C18.4 4 12 4 12 4s-6.4 0-8.2.1a3.3 3.3 0 00-2.3 2.3C1 8.2 1 12 1 12s0 3.8.5 5.6a3.3 3.3 0 002.3 2.3c1.8.2 8.2.2 8.2.2s6.4 0 8.2-.2a3.3 3.3 0 002.3-2.3c.5-1.8.5-5.6.5-5.6z"/>
-                  <path d="M10 15V9l6 3-6 3z" fill="#1a1a1a"/>
+                  <path d="M10 15V9l6 3-6 3z" fill="currentColor" opacity="0.85"/>
                 </svg>
               </a>
               <a href="https://wa.me/902122264550" target="_blank" rel="noreferrer" className="footer__social" aria-label="WhatsApp">
